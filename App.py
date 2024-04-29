@@ -1,5 +1,8 @@
 import streamlit as st
 
+url = "https://raw.githubusercontent.com/Adlibaari/CBR/main/bookdata.csv"
+df = pd.read_csv(url)
+
 def recommend(bookTitle):
     bookTitle=str(bookTitle)
     

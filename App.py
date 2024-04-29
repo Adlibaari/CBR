@@ -1,6 +1,6 @@
 import streamlit as st
 
-def content_based(bookTitle):
+def recommend(bookTitle):
     bookTitle=str(bookTitle)
     
     if bookTitle in df["Book-Title"].values:
@@ -38,5 +38,6 @@ def content_based(bookTitle):
     else:
         st.write("❌ COULD NOT FIND ❌")
 
-st.text_input("Book you want recommendation based off of")
+book = st.text_input("Book you want recommendation based off of")
+recommend(book)
 st.write("Hello")

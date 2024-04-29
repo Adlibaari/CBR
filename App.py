@@ -1,4 +1,10 @@
 import streamlit as st
+import warnings
+warnings.filterwarnings("ignore")
+import pandas as pd
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction.text import CountVectorizer
+import re
 
 url = "https://raw.githubusercontent.com/Adlibaari/CBR/main/bookdata.csv"
 df = pd.read_csv(url)

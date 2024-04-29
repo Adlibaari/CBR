@@ -19,7 +19,7 @@ def recommend(bookTitle):
 
         if bookTitle in rare_books:
             most_common=pd.Series(common_books["Book-Title"].unique()).sample(3).values
-            st.write("No Recommendations for this Book ☹️ \n ")
+            st.write("No Recommendations for this Book \n ")
             st.write("YOU MAY TRY: \n ")
             st.write("{}".format(most_common[0]), "\n")
             st.write("{}".format(most_common[1]), "\n")
@@ -45,8 +45,7 @@ def recommend(bookTitle):
                 st.write(books[i], "\n")
 
     else:
-        st.write("❌ COULD NOT FIND ❌")
+        st.write("COULD NOT FIND THE BOOK YOU CHOSEN")
 
 book = st.text_input("Book you want recommendation based off of")
 recommend(book)
-st.write("Hello")

@@ -17,14 +17,14 @@ def recommend(bookTitle):
         rare_books=rating_count[rating_count["count"]<=200].index
         common_books=df[~df["Book-Title"].isin(rare_books)]
 
-        if bookTitle in rare_books:
-            most_common=pd.Series(common_books["Book-Title"].unique()).sample(3).values
-            st.write("No Recommendations for this Book \n ")
-            st.write("YOU MAY TRY: \n ")
-            st.write("{}".format(most_common[0]), "\n")
-            st.write("{}".format(most_common[1]), "\n")
-            st.write("{}".format(most_common[2]), "\n")
-        else:
+        # if bookTitle in rare_books:
+        #     most_common=pd.Series(common_books["Book-Title"].unique()).sample(3).values
+        #     st.write("No Recommendations for this Book \n ")
+        #     st.write("YOU MAY TRY: \n ")
+        #     st.write("{}".format(most_common[0]), "\n")
+        #     st.write("{}".format(most_common[1]), "\n")
+        #     st.write("{}".format(most_common[2]), "\n")
+        # else:
             common_books=common_books.drop_duplicates(subset=["Book-Title"])
             common_books.reset_index(inplace=True)
             common_books["index"]=[i for i in range(common_books.shape[0])]

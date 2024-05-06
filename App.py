@@ -111,7 +111,7 @@ def common(new_df,user,user_id):
         
     return recommend_books[0:5]
 
-if book1 and book2 and book3 and book4 and book5:
+if st.button("Search"):
     
     user_id=278859
     user_choice_df=pd.DataFrame(users_choice())

@@ -50,7 +50,7 @@ df = pd.read_csv(url)
 
 url2 = "https://raw.githubusercontent.com/Adlibaari/CBR/main/book_list.csv"
 booklist = pd.read_csv(url)
-booklist.drop_duplicates()
+booklist = booklist.drop_duplicates()
 
 Book1 = st.selectbox("Book number 1:",booklist,index=None)
 Book2 = st.selectbox("Book number 2:",booklist,index=None)

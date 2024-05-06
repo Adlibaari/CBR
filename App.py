@@ -52,11 +52,11 @@ url2 = "https://raw.githubusercontent.com/Adlibaari/CBR/main/book_list.csv"
 booklist = pd.read_csv(url)
 booklist.drop_duplicates()
 
-Book1 = st.selectbox("Book number 1:",booklist,index=none)
-Book2 = st.selectbox("Book number 2:",booklist,index=none)
-Book3 = st.selectbox("Book number 3:",booklist,index=none)
-Book4 = st.selectbox("Book number 4:",booklist,index=none)
-Book5 = st.selectbox("Book number 5:",booklist,index=none)
+Book1 = st.selectbox("Book number 1:",booklist,index=None)
+Book2 = st.selectbox("Book number 2:",booklist,index=None)
+Book3 = st.selectbox("Book number 3:",booklist,index=None)
+Book4 = st.selectbox("Book number 4:",booklist,index=None)
+Book5 = st.selectbox("Book number 5:",booklist,index=None)
 
 new_df=df[df['User-ID'].map(df['User-ID'].value_counts()) > 200]  # Drop users who vote less than 200 times.
 

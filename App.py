@@ -48,9 +48,13 @@ df = pd.read_csv(url)
 #     else:
 #         st.write("COULD NOT FIND THE BOOK YOU CHOSEN")
 
+
+
+Book1 = st.selectbox("Book number 1:",("The Da Vinci Code"))
+
 new_df=df[df['User-ID'].map(df['User-ID'].value_counts()) > 200]  # Drop users who vote less than 200 times.
 
-userInput = [{"Book-Title": "The Da Vinci Code","User-ID":278859, "Book-Rating": 10},
+userInput = [{"Book-Title": Book1,"User-ID":278859, "Book-Rating": 10},
              {"Book-Title": "My Evil Twin An Avon Camelot Book", "User-ID":278859, "Book-Rating": 10},
              {"Book-Title": "A Wrinkle in Time", "User-ID":278859, "Book-Rating": 10},
              {"Book-Title": "Endurance Shackleton s Incredible Voyage", "User-ID":278859, "Book-Rating": 10},
@@ -107,8 +111,8 @@ user_choice_df=pd.DataFrame(users_choice())
 user_favorite=users_choice()
 n=len(user_choice_df["Book-Title"].values)
      
-for i in range(n):
-        st.write(user_choice_df["Book-Title"].values[i], "\n")
+# for i in range(n):
+#         st.write(user_choice_df["Book-Title"].values[i], "\n")
 
 user_based_rec=user_based(new_df,user_id)
 books_for_user=common(new_df,user_based_rec,user_id)

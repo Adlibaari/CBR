@@ -50,7 +50,7 @@ df = pd.read_csv(url)
 
 
 
-Book1 = st.selectbox("Book number 1:",("The Da Vinci Code"))
+Book1 = st.selectbox("Book number 1:",("The Da Vinci Code","A Wrinkle in Time"))
 
 new_df=df[df['User-ID'].map(df['User-ID'].value_counts()) > 200]  # Drop users who vote less than 200 times.
 

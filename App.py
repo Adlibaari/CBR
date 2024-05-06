@@ -1,5 +1,6 @@
 import streamlit as st
 import warnings
+import numpy as np
 warnings.filterwarnings("ignore")
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
@@ -105,17 +106,16 @@ user_id=278859
 user_choice_df=pd.DataFrame(users_choice())
 user_favorite=users_choice()
 n=len(user_choice_df["Book-Title"].values)
-print("🟦 USER: {} ".format(user_id))
      
 for i in range(n):
-        print(user_choice_df["Book-Title"].values[i], "\n")
+        st.write(user_choice_df["Book-Title"].values[i], "\n")
 
 user_based_rec=user_based(new_df,user_id)
 books_for_user=common(new_df,user_based_rec,user_id)
 books_for_userDF=pd.DataFrame(books_for_user,columns=["Book-Title"])
 
 for i in range(5):
-    print(books_for_user[i], "\n")
+    st.write(books_for_user[i], "\n")
 
 # if book:
 #     recommend(book)

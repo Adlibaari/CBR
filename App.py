@@ -48,9 +48,10 @@ df = pd.read_csv(url)
 #     else:
 #         st.write("COULD NOT FIND THE BOOK YOU CHOSEN")
 
+url2 = "https://raw.githubusercontent.com/Adlibaari/CBR/main/book_list.csv"
+booklist = pd.read_csv(url)
 
-
-Book1 = st.selectbox("Book number 1:",("The Da Vinci Code","A Wrinkle in Time"))
+Book1 = st.selectbox("Book number 1:",booklist)
 
 new_df=df[df['User-ID'].map(df['User-ID'].value_counts()) > 200]  # Drop users who vote less than 200 times.
 

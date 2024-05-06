@@ -50,16 +50,21 @@ df = pd.read_csv(url)
 
 url2 = "https://raw.githubusercontent.com/Adlibaari/CBR/main/book_list.csv"
 booklist = pd.read_csv(url)
+booklist.drop_duplicates()
 
-Book1 = st.selectbox("Book number 1:",booklist)
+Book1 = st.selectbox("Book number 1:",booklist,index=none)
+Book2 = st.selectbox("Book number 2:",booklist,index=none)
+Book3 = st.selectbox("Book number 3:",booklist,index=none)
+Book4 = st.selectbox("Book number 4:",booklist,index=none)
+Book5 = st.selectbox("Book number 5:",booklist,index=none)
 
 new_df=df[df['User-ID'].map(df['User-ID'].value_counts()) > 200]  # Drop users who vote less than 200 times.
 
 userInput = [{"Book-Title": Book1,"User-ID":278859, "Book-Rating": 10},
-             {"Book-Title": "My Evil Twin An Avon Camelot Book", "User-ID":278859, "Book-Rating": 10},
-             {"Book-Title": "A Wrinkle in Time", "User-ID":278859, "Book-Rating": 10},
-             {"Book-Title": "Endurance Shackleton s Incredible Voyage", "User-ID":278859, "Book-Rating": 10},
-             {"Book-Title": "We Live in Ireland Living Here", "User-ID":278859, "Book-Rating": 10}]
+             {"Book-Title": Book2, "User-ID":278859, "Book-Rating": 10},
+             {"Book-Title": Book3, "User-ID":278859, "Book-Rating": 10},
+             {"Book-Title": Book4, "User-ID":278859, "Book-Rating": 10},
+             {"Book-Title": Book5, "User-ID":278859, "Book-Rating": 10}]
     #users_fav=new_df[new_df["User-ID"]==id].sort_values(["Book-Rating"],ascending=False)[0:5]
 users_fav=pd.DataFrame(userInput)
 

@@ -96,38 +96,38 @@ with st.form("my form"):
     Book3 = st.selectbox("Book number 3:",booklist,index=None)
     Book4 = st.selectbox("Book number 4:",booklist,index=None)
     Book5 = st.selectbox("Book number 5:",booklist,index=None)
-    
-    new_df=df[df['User-ID'].map(df['User-ID'].value_counts()) > 200]  # Drop users who vote less than 200 times.
-    
-    userInput = [{"Book-Title": Book1,"User-ID":278859, "Book-Rating": 10},
-                 {"Book-Title": Book2, "User-ID":278859, "Book-Rating": 10},
-                 {"Book-Title": Book3, "User-ID":278859, "Book-Rating": 10},
-                 {"Book-Title": Book4, "User-ID":278859, "Book-Rating": 10},
-                 {"Book-Title": Book5, "User-ID":278859, "Book-Rating": 10}]
-        #users_fav=new_df[new_df["User-ID"]==id].sort_values(["Book-Rating"],ascending=False)[0:5]
-    users_fav=pd.DataFrame(userInput)
-    
-    new_df = pd.concat([new_df, users_fav], ignore_index=True)
-    
-    users_pivot=new_df.pivot_table(index=["User-ID"],columns=["Book-Title"],values="Book-Rating")
-    users_pivot.fillna(0,inplace=True)
 
     submitted = st.form_submit_button("Submit")
-    if submitted:    
-        user_id=278859
-        user_choice_df=pd.DataFrame(users_choice())
-        user_favorite=users_choice()
-        n=len(user_choice_df["Book-Title"].values)
-             
-        # for i in range(n):
-        #         st.write(user_choice_df["Book-Title"].values[i], "\n")
+    if submitted: 
+        new_df=df[df['User-ID'].map(df['User-ID'].value_counts()) > 200]  # Drop users who vote less than 200 times.
         
-        user_based_rec=user_based(new_df,user_id)
-        books_for_user=common(new_df,user_based_rec,user_id)
-        books_for_userDF=pd.DataFrame(books_for_user,columns=["Book-Title"])
+        userInput = [{"Book-Title": Book1,"User-ID":278859, "Book-Rating": 10},
+                     {"Book-Title": Book2, "User-ID":278859, "Book-Rating": 10},
+                     {"Book-Title": Book3, "User-ID":278859, "Book-Rating": 10},
+                     {"Book-Title": Book4, "User-ID":278859, "Book-Rating": 10},
+                     {"Book-Title": Book5, "User-ID":278859, "Book-Rating": 10}]
+            #users_fav=new_df[new_df["User-ID"]==id].sort_values(["Book-Rating"],ascending=False)[0:5]
+        users_fav=pd.DataFrame(userInput)
         
-        for i in range(5):
-            st.write(books_for_user[i], "\n")
+        new_df = pd.concat([new_df, users_fav], ignore_index=True)
+        
+        users_pivot=new_df.pivot_table(index=["User-ID"],columns=["Book-Title"],values="Book-Rating")
+        users_pivot.fillna(0,inplace=True)
+       
+            user_id=278859
+            user_choice_df=pd.DataFrame(users_choice())
+            user_favorite=users_choice()
+            n=len(user_choice_df["Book-Title"].values)
+                 
+            # for i in range(n):
+            #         st.write(user_choice_df["Book-Title"].values[i], "\n")
+            
+            user_based_rec=user_based(new_df,user_id)
+            books_for_user=common(new_df,user_based_rec,user_id)
+            books_for_userDF=pd.DataFrame(books_for_user,columns=["Book-Title"])
+            
+            for i in range(5):
+                st.write(books_for_user[i], "\n")
 
 # if book:
 #     recommend(book)

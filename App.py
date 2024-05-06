@@ -49,7 +49,7 @@ df = pd.read_csv(url)
 #         st.write("COULD NOT FIND THE BOOK YOU CHOSEN")
 
 url2 = "https://raw.githubusercontent.com/Adlibaari/CBR/main/book_list.csv"
-booklist = pd.read_csv(url)
+booklist = pd.read_csv(url2)
 
 Book1 = st.selectbox("Book number 1:",booklist,index=None)
 # Book2 = st.selectbox("Book number 2:",booklist,index=None)

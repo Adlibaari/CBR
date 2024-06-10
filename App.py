@@ -3,6 +3,7 @@ import warnings
 import numpy as np
 warnings.filterwarnings("ignore")
 import pandas as pd
+import pyarrow.feather as feather
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
 import re
@@ -49,7 +50,7 @@ df = pd.read_csv(url)
 #         st.write("COULD NOT FIND THE BOOK YOU CHOSEN")
 
 url2 = "https://raw.githubusercontent.com/Adlibaari/CBR/main/book_list.csv"
-booklist = pd.read_csv(url2)
+booklist = feather.read_feather(url2)
 
 # book = st.text_input("Book you want recommendation based off of")
 

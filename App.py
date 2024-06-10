@@ -97,7 +97,7 @@ with st.form("my form"):
     Book3 = st.selectbox("Judul Buku 3:",booklist,index=None)
     Book4 = st.selectbox("Judul Buku 4:",booklist,index=None)
     Book5 = st.selectbox("Judul Buku 5:",booklist,index=None)
-
+    
     submitted = st.form_submit_button("Submit")
     if submitted: 
         st.divider()
@@ -137,5 +137,7 @@ with st.form("my form"):
             images.append(new_df.loc[new_df["Book-Title"]==books_for_userDF["Book-Title"].tolist()[i],"Image-URL-L"][:1].values[0])
 
         st.image(images, width = 250, caption = captions)
+
+st.write(book2)
 # if book:
 #     recommend(book)

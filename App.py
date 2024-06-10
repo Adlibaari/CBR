@@ -142,6 +142,6 @@ with st.form("my form"):
 
         st.image(images, width = 250, caption = captions)
 
-st.write(status)
+
 # if book:
 #     recommend(book)

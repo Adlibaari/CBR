@@ -20,11 +20,11 @@ def recommend(bookTitle):
         common_books=df[~df["Book-Title"].isin(rare_books)]
 
         if bookTitle in rare_books:
-            most_common=pd.Series(common_books["Book-Title"].unique()).sample(3).values
-            common_images=pd.Series(common_books["Image-URL-L"].unique()).sample(3).values
+            sampled_data = common_books.sample(3)
+            elected_values = sampled_data[["Book-Title", "Image-URL-L"]].values
             st.header("Tidak bisa memberikan rekomendasi \n ")
             st.write("Namun anda dapat mencoba: \n ")
-            st.image([common_images[0],common_images[1],common_images[2]], width = 250, caption = [most_common[0],most_common[1],most_common[2]])
+            st.image([elected_values[0][1],elected_values[1][1],elected_values[2][1]], width = 250, caption = [elected_values[0][0],elected_values[1][0],elected_values[2][0]])
         else:
             common_books=common_books.drop_duplicates(subset=["Book-Title"])
             common_books.reset_index(inplace=True)

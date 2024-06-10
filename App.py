@@ -92,11 +92,11 @@ def common(new_df,user,user_id):
 st.title(' :book: Book Recommendation :book:')
 
 with st.form("my form"): 
-    Book1 = st.selectbox("Judul Buku 1:",booklist,index=None, placeholder = "Masukkan judul buku...")
-    Book2 = st.selectbox("Judul Buku 2:",booklist,index=None, placeholder = "Masukkan judul buku...")
-    Book3 = st.selectbox("Judul Buku 3:",booklist,index=None, placeholder = "Masukkan judul buku...")
-    Book4 = st.selectbox("Judul Buku 4:",booklist,index=None, placeholder = "Masukkan judul buku...")
-    Book5 = st.selectbox("Judul Buku 5:",booklist,index=None, placeholder = "Masukkan judul buku...")
+    Book1 = st.selectbox("Judul Buku 1:",booklist,index=None, placeholder = "Pilih judul buku...")
+    Book2 = st.selectbox("Judul Buku 2:",booklist,index=None, placeholder = "Pilih judul buku...")
+    Book3 = st.selectbox("Judul Buku 3:",booklist,index=None, placeholder = "Pilih judul buku...")
+    # Book4 = st.selectbox("Judul Buku 4:",booklist,index=None, placeholder = "Pilih judul buku...")
+    # Book5 = st.selectbox("Judul Buku 5:",booklist,index=None, placeholder = "Pilih judul buku...")
     
     submitted = st.form_submit_button("Submit")
     if submitted: 
@@ -138,6 +138,5 @@ with st.form("my form"):
 
         st.image(images, width = 250, caption = captions)
 
-st.write(Book2)
 # if book:
 #     recommend(book)

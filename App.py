@@ -24,9 +24,7 @@ def recommend(bookTitle):
             common_images=pd.Series(common_books["Image-URL-L"].unique()).sample(3).values
             st.header("Tidak bisa memberikan rekomendasi \n ")
             st.write("Namun anda dapat mencoba: \n ")
-            st.image(common_images[0], width = 250, caption = most_common[0])
-            st.image(common_images[1], width = 250, caption = most_common[1])
-            st.image(common_images[2], width = 250, caption = most_common[2])
+            st.image([common_images[0],common_images[1],common_images[2]], width = 250, caption = [most_common[0],most_common[1],most_common[2]])
         else:
             common_books=common_books.drop_duplicates(subset=["Book-Title"])
             common_books.reset_index(inplace=True)

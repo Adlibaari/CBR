@@ -130,9 +130,9 @@ with st.form("my form"):
         images = []
         for i in range(5):
             # st.write(books_for_user[i], "\n")
-            image=new_df.loc[new_df["Book-Title"]==books_for_userDF["Book-Title"].tolist()[i],"Image-URL-M"][:1].values[0]
+            image=new_df.loc[new_df["Book-Title"]==books_for_userDF["Book-Title"].tolist()[i],"Image-URL-L"][:1].values[0]
             images.append(image)
 
-        st.image(images)
+        st.image(images, width = 100)
 # if book:
 #     recommend(book)

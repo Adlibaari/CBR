@@ -126,11 +126,13 @@ with st.form("my form"):
         user_based_rec=user_based(new_df,user_id)
         books_for_user=common(new_df,user_based_rec,user_id)
         books_for_userDF=pd.DataFrame(books_for_user,columns=["Book-Title"])
-        
+
+        images = []
         for i in range(5):
             # st.write(books_for_user[i], "\n")
             image=new_df.loc[new_df["Book-Title"]==books_for_userDF["Book-Title"].tolist()[i],"Image-URL-L"][:1].values[0]
-            st.image(image)
+            images.append(image)
 
+        st.image(images)
 # if book:
 #     recommend(book)

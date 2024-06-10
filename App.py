@@ -128,10 +128,8 @@ with st.form("my form"):
         books_for_userDF=pd.DataFrame(books_for_user,columns=["Book-Title"])
         
         for i in range(5):
-            st.write(books_for_user[i], "\n")
-
-        for i in range(5):
-            image = common_books.loc[common_books["Book-Title"]==books[i],"Image-URL-L"][:1].values[0]
+            # st.write(books_for_user[i], "\n")
+            image=new_df.loc[new_df["Book-Title"]==books_for_userDF["Book-Title"].tolist()[i],"Image-URL-L"][:1].values[0]
             st.image(image)
 
 # if book:

@@ -95,7 +95,7 @@ def common(new_df,user,user_id):
 
 st.title(' :book: Book Recommendation :book:')
 container = st.container(border=True)
-container.write('Aplikasi ini akan memberikan 5 judul buku yang direkomendasikan berdasarkan judul buku yang anda pilih. Jika memilih satu buku saja, maka algoritma yang digunakan adalah Content Based. Jika memilih lebih dari satu buku, maka algoritma yang digunakan adalah User Based')
+container.write('Aplikasi ini akan memberikan 5 judul buku yang direkomendasikan berdasarkan judul buku yang anda pilih. Jika memilih satu buku saja, maka algoritma yang digunakan adalah Content-Based Recommendation. Jika memilih lebih dari satu buku, maka algoritma yang digunakan adalah User-Based Recommendation.')
 
 with st.form("my form"): 
     Book1 = st.selectbox("Judul Buku 1:",booklist,index=None, placeholder = "Pilih judul buku")

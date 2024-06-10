@@ -49,7 +49,7 @@ df = pd.read_csv(url)
 #     else:
 #         st.write("COULD NOT FIND THE BOOK YOU CHOSEN")
 
-url2 = "https://raw.githubusercontent.com/Adlibaari/CBR/main/book_list.csv"
+url2 = "https://raw.githubusercontent.com/Adlibaari/CBR/main/booklist.feather"
 booklist = feather.read_feather(url2)
 
 # book = st.text_input("Book you want recommendation based off of")

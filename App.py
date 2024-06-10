@@ -89,6 +89,7 @@ def common(new_df,user,user_id):
         
     return recommend_books[0:5]
 
+st.title(' :book: Book Recommendation')
 
 with st.form("my form"):
     Book1 = st.selectbox("Book number 1:",booklist,index=None)

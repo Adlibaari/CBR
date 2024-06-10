@@ -100,6 +100,9 @@ with st.form("my form"):
 
     submitted = st.form_submit_button("Submit")
     if submitted: 
+        st.divider()
+        st.header('You Might Like')
+        
         new_df=df[df['User-ID'].map(df['User-ID'].value_counts()) > 200]  # Drop users who vote less than 200 times.
         
         userInput = [{"Book-Title": Book1,"User-ID":278859, "Book-Rating": 10},

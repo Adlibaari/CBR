@@ -105,7 +105,7 @@ with st.form("my form"):
         st.header('Kamu mungkin akan menyukai: ')
 
         if Book2 == 'None':
-            status = True
+            st.write('gaada')
         
         new_df=df[df['User-ID'].map(df['User-ID'].value_counts()) > 200]  # Drop users who vote less than 200 times.
         

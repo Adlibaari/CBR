@@ -138,6 +138,6 @@ with st.form("my form"):
 
         st.image(images, width = 250, caption = captions)
 
-st.write(book2)
+st.write(Book2)
 # if book:
 #     recommend(book)

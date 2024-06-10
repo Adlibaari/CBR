@@ -89,14 +89,14 @@ def common(new_df,user,user_id):
         
     return recommend_books[0:5]
 
-st.title(' :book: Book Recommendation')
+st.title(' :book: Book Recommendation :book:')
 
 with st.form("my form"):
-    Book1 = st.selectbox("Book number 1:",booklist,index=None)
-    Book2 = st.selectbox("Book number 2:",booklist,index=None)
-    Book3 = st.selectbox("Book number 3:",booklist,index=None)
-    Book4 = st.selectbox("Book number 4:",booklist,index=None)
-    Book5 = st.selectbox("Book number 5:",booklist,index=None)
+    Book1 = st.selectbox("Judul Buku 1:",booklist,index=None)
+    Book2 = st.selectbox("Judul Buku 2:",booklist,index=None)
+    Book3 = st.selectbox("Judul Buku 3:",booklist,index=None)
+    Book4 = st.selectbox("Judul Buku 4:",booklist,index=None)
+    Book5 = st.selectbox("Judul Buku 5:",booklist,index=None)
 
     submitted = st.form_submit_button("Submit")
     if submitted: 
@@ -129,6 +129,10 @@ with st.form("my form"):
         
         for i in range(5):
             st.write(books_for_user[i], "\n")
+
+        for i in range(books_for_user):
+            image = common_books.loc[common_books["Book-Title"]==books[i],"Image-URL-L"][:1].values[0]
+            st.image(image)
 
 # if book:
 #     recommend(book)

@@ -91,20 +91,12 @@ def common(new_df,user,user_id):
 
 st.title(' :book: Book Recommendation :book:')
 
-with st.form("my form"):
-    if "visibility" not in st.session_state:
-        st.session_state.visibility = "collapsed"
-        st.session_state.disabled = True
-    
-    Book1 = st.selectbox("Judul Buku 1:",booklist,index=None)
-    Book2 = st.selectbox("Judul Buku 2:",booklist,index=None,label_visibility=st.session_state.visibility,
-        disabled=st.session_state.disabled)
-    Book3 = st.selectbox("Judul Buku 3:",booklist,index=None,label_visibility=st.session_state.visibility,
-        disabled=st.session_state.disabled)
-    Book4 = st.selectbox("Judul Buku 4:",booklist,index=None,label_visibility=st.session_state.visibility,
-        disabled=st.session_state.disabled)
-    Book5 = st.selectbox("Judul Buku 5:",booklist,index=None,label_visibility=st.session_state.visibility,
-        disabled=st.session_state.disabled)
+with st.form("my form"): 
+    Book1 = st.selectbox("Judul Buku 1:",booklist,index=None, placeholder = "Masukkan judul buku...")
+    Book2 = st.selectbox("Judul Buku 2:",booklist,index=None, placeholder = "Masukkan judul buku...")
+    Book3 = st.selectbox("Judul Buku 3:",booklist,index=None, placeholder = "Masukkan judul buku...")
+    Book4 = st.selectbox("Judul Buku 4:",booklist,index=None, placeholder = "Masukkan judul buku...")
+    Book5 = st.selectbox("Judul Buku 5:",booklist,index=None, placeholder = "Masukkan judul buku...")
     
     submitted = st.form_submit_button("Submit")
     if submitted: 

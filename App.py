@@ -133,6 +133,6 @@ with st.form("my form"):
             image=new_df.loc[new_df["Book-Title"]==books_for_userDF["Book-Title"].tolist()[i],"Image-URL-L"][:1].values[0]
             images.append(image)
 
-        st.image(images, width = 100)
+        st.image(images, width = 500)
 # if book:
 #     recommend(book)

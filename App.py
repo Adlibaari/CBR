@@ -130,7 +130,7 @@ with st.form("my form"):
         for i in range(5):
             st.write(books_for_user[i], "\n")
 
-        for i in range(books_for_user):
+        for i in range(5):
             image = common_books.loc[common_books["Book-Title"]==books[i],"Image-URL-L"][:1].values[0]
             st.image(image)
 

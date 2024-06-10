@@ -99,7 +99,7 @@ container.write('Aplikasi ini akan memberikan 5 judul buku yang direkomendasikan
 
 with st.form("my form"): 
     Book1 = st.selectbox("Judul Buku 1:",booklist,index=None, placeholder = "Pilih judul buku")
-    Book2 = st.selectbox("Judul Buku 2:",booklist,index=None, placeholder = "Pilih judul buku", label_visibility = "collapse")
+    Book2 = st.selectbox("Judul Buku 2:",booklist,index=None, placeholder = "Pilih judul buku")
     Book3 = st.selectbox("Judul Buku 3:",booklist,index=None, placeholder = "Pilih judul buku")
     Book4 = st.selectbox("Judul Buku 4:",booklist,index=None, placeholder = "Pilih judul buku")
     Book5 = st.selectbox("Judul Buku 5:",booklist,index=None, placeholder = "Pilih judul buku")

@@ -92,7 +92,7 @@ def common(new_df,user,user_id):
 st.title(' :book: Book Recommendation :book:')
 
 with st.form("my form"):
-    Book1 = st.selectbox("Judul Buku 1:",booklist,index=None)
+    Book1 = st.selectbox("Judul Buku 1:",booklist,index=None, maxDropdownHeight=5)
     Book2 = st.selectbox("Judul Buku 2:",booklist,index=None)
     Book3 = st.selectbox("Judul Buku 3:",booklist,index=None)
     Book4 = st.selectbox("Judul Buku 4:",booklist,index=None)

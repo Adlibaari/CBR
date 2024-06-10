@@ -39,13 +39,16 @@ def recommend(bookTitle):
             similar_books=list(enumerate(similarity[index]))
             similar_booksSorted=sorted(similar_books,key=lambda x:x[1],reverse=True)[1:6]
             books=[]
+            
             for i in range(len(similar_booksSorted)):
                 
                 books.append(common_books[common_books["index"]==similar_booksSorted[i][0]]["Book-Title"].item())
-                
+            
+            images=[]    
             for i in range(len(books)):
-                st.write(books[i], "\n")
+                images.append(common_books.loc[common_books["Book-Title"]==books[i],"Image-URL-L"][:1].values[0])
 
+            st.image(images, width=250, caption=books)
     else:
         st.write("COULD NOT FIND THE BOOK YOU CHOSEN")
 

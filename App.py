@@ -93,10 +93,10 @@ st.title(' :book: Book Recommendation :book:')
 
 with st.form("my form"):
     Book1 = st.selectbox("Judul Buku 1:",booklist,index=None)
-    Book2 = st.selectbox("Judul Buku 2:",booklist,index=None)
-    Book3 = st.selectbox("Judul Buku 3:",booklist,index=None)
-    Book4 = st.selectbox("Judul Buku 4:",booklist,index=None)
-    Book5 = st.selectbox("Judul Buku 5:",booklist,index=None)
+    Book2 = st.selectbox("Judul Buku 2:",booklist,index=None, disabled=True)
+    Book3 = st.selectbox("Judul Buku 3:",booklist,index=None, disabled=True)
+    Book4 = st.selectbox("Judul Buku 4:",booklist,index=None, disabled=True)
+    Book5 = st.selectbox("Judul Buku 5:",booklist,index=None, disabled=True)
     
     submitted = st.form_submit_button("Submit")
     if submitted: 

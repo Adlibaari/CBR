@@ -21,11 +21,12 @@ def recommend(bookTitle):
 
         if bookTitle in rare_books:
             most_common=pd.Series(common_books["Book-Title"].unique()).sample(3).values
-            st.write("We can't give  you recommendations for this book \n ")
-            st.write("But you can try: \n ")
-            st.write("{}".format(most_common[0]), "\n")
-            st.write("{}".format(most_common[1]), "\n")
-            st.write("{}".format(most_common[2]), "\n")
+            common_images=pd.Series(common_books["Image-URL-L"].unique()).sample(3).values
+            st.header("Tidak bisa memberikan rekomendasi \n ")
+            st.write("Namun anda dapat mencoba: \n ")
+            st.image(common_images[0], width = 250, caption = most_common[0])
+            st.image(common_images[1], width = 250, caption = most_common[1])
+            st.image(common_images[2], width = 250, caption = most_common[2])
         else:
             common_books=common_books.drop_duplicates(subset=["Book-Title"])
             common_books.reset_index(inplace=True)
@@ -48,6 +49,7 @@ def recommend(bookTitle):
             for i in range(len(books)):
                 images.append(common_books.loc[common_books["Book-Title"]==books[i],"Image-URL-L"][:1].values[0])
 
+            st.header('Kamu mungkin akan menyukai: ')
             st.image(images, width=250, caption=books)
     else:
         st.write("COULD NOT FIND THE BOOK YOU CHOSEN")
@@ -107,7 +109,6 @@ with st.form("my form"):
     submitted = st.form_submit_button("Submit")
     if submitted: 
         st.divider()
-        st.header('Kamu mungkin akan menyukai: ')
 
         if Book2 == None:
             recommend(Book1)
@@ -144,7 +145,8 @@ with st.form("my form"):
             for i in range(5):
                 captions.append(books_for_user[i])
                 images.append(new_df.loc[new_df["Book-Title"]==books_for_userDF["Book-Title"].tolist()[i],"Image-URL-L"][:1].values[0])
-    
+
+            st.header('Kamu mungkin akan menyukai: ')
             st.image(images, width = 250, caption = captions)
 
 

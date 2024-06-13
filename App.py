@@ -50,7 +50,7 @@ def recommend(bookTitle):
             st.header('Kamu mungkin akan menyukai: ')
             st.image(images, width=250, caption=books)
     else:
-        st.write("COULD NOT FIND THE BOOK YOU CHOSEN")
+        st.write("BUKU TIDAK DITEMUKAN")
 
 url2 = "https://raw.githubusercontent.com/Adlibaari/CBR/main/booklist.feather"
 booklist = pd.read_feather(url2)
